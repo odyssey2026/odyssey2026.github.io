@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="100%" height="100%" fill="#FBFAF7" rx="8"/>
+  <!-- Base Network Grid -->
+  <g stroke="#E4E2DC" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="500" y1="0" x2="500" y2="400"/>
+    <line x1="700" y1="0" x2="700" y2="400"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+  </g>
+  
+  <text x="400" y="40" font-family="'Fraunces', serif" font-size="24" font-weight="700" fill="#0B2545" text-anchor="middle">Decisión: Cloud Run vs GKE Autopilot</text>
+  
+  <!-- Cloud Run Path -->
+  <g transform="translate(150, 100)">
+    <rect x="-100" y="0" width="200" height="80" rx="4" fill="#3B82F6" opacity="0.1"/>
+    <rect x="-100" y="0" width="200" height="80" rx="4" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <text x="0" y="30" font-family="system-ui" font-size="16" font-weight="bold" fill="#0B2545" text-anchor="middle">Simplicidad Operativa</text>
+    <text x="0" y="55" font-family="system-ui" font-size="12" fill="#4A5868" text-anchor="middle">HTTP, Eventos, Sin Estado</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M250 140 L350 140" stroke="#0B2545" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(450, 100)">
+    <circle cx="0" cy="40" r="50" fill="#C8A44D" opacity="0.2"/>
+    <circle cx="0" cy="40" r="50" fill="none" stroke="#C8A44D" stroke-width="2"/>
+    <text x="0" y="45" font-family="system-ui" font-size="16" font-weight="bold" fill="#0B2545" text-anchor="middle">Cloud Run</text>
+  </g>
+
+  <!-- Autopilot Path -->
+  <g transform="translate(150, 240)">
+    <rect x="-100" y="0" width="200" height="80" rx="4" fill="#3B82F6" opacity="0.1"/>
+    <rect x="-100" y="0" width="200" height="80" rx="4" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <text x="0" y="30" font-family="system-ui" font-size="16" font-weight="bold" fill="#0B2545" text-anchor="middle">Ecosistema Extendido</text>
+    <text x="0" y="55" font-family="system-ui" font-size="12" fill="#4A5868" text-anchor="middle">CRDs, Helm, Stateful</text>
+  </g>
+
+  <path d="M250 280 L350 280" stroke="#0B2545" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g transform="translate(450, 240)">
+    <rect x="-60" y="-10" width="120" height="100" rx="8" fill="#3B82F6" opacity="0.2"/>
+    <rect x="-60" y="-10" width="120" height="100" rx="8" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <text x="0" y="35" font-family="system-ui" font-size="16" font-weight="bold" fill="#0B2545" text-anchor="middle">GKE</text>
+    <text x="0" y="60" font-family="system-ui" font-size="16" font-weight="bold" fill="#0B2545" text-anchor="middle">Autopilot</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0B2545"/>
+    </marker>
+  </defs>
+</svg>

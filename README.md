@@ -1,2 +1,0 @@
-# oddyssey.github.io
-blog
