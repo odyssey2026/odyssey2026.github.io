@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <style>
+      .text-title { font-family: sans-serif; font-size: 20px; font-weight: bold; fill: #14202E; }
+      .text-body { font-family: sans-serif; font-size: 14px; fill: #4A5868; }
+      .box { fill: #ffffff; stroke: #3B82F6; stroke-width: 2; rx: 8; }
+      .highlight { fill: #3B82F6; opacity: 0.1; }
+
+      @media (prefers-color-scheme: dark) {
+        .text-title { fill: #E6EDF3; }
+        .text-body { fill: #9AA8B8; }
+        .box { fill: #111D2B; stroke: #7FB3E6; }
+        .highlight { fill: #7FB3E6; opacity: 0.15; }
+      }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="none" />
+
+  <!-- Left Side: Request Billing -->
+  <g transform="translate(50, 50)">
+    <rect width="300" height="300" class="box" />
+    <text x="150" y="40" text-anchor="middle" class="text-title">Facturación por Petición</text>
+
+    <!-- Timeline -->
+    <line x1="40" y1="90" x2="260" y2="90" stroke="#9AA8B8" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="150" y="80" text-anchor="middle" class="text-body">Tiempo</text>
+
+    <!-- Requests -->
+    <rect x="60" y="120" width="40" height="120" fill="#3B82F6" />
+    <rect x="120" y="140" width="60" height="100" fill="#3B82F6" />
+    <rect x="200" y="150" width="40" height="90" fill="#3B82F6" />
+
+    <rect x="60" y="120" width="40" height="120" class="highlight" />
+    <rect x="120" y="140" width="60" height="100" class="highlight" />
+    <rect x="200" y="150" width="40" height="90" class="highlight" />
+
+    <path d="M60,110 L100,110" stroke="#C8A44D" stroke-width="4" />
+    <path d="M120,130 L180,130" stroke="#C8A44D" stroke-width="4" />
+    <path d="M200,140 L240,140" stroke="#C8A44D" stroke-width="4" />
+
+    <text x="150" y="270" text-anchor="middle" class="text-body">Pagas SOLO el tiempo amarillo</text>
+  </g>
+
+  <!-- Right Side: Instance Billing -->
+  <g transform="translate(450, 50)">
+    <rect width="300" height="300" class="box" />
+    <text x="150" y="40" text-anchor="middle" class="text-title">Facturación por Instancia</text>
+
+    <!-- Timeline -->
+    <line x1="40" y1="90" x2="260" y2="90" stroke="#9AA8B8" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="150" y="80" text-anchor="middle" class="text-body">Tiempo (Ciclo de Vida)</text>
+
+    <!-- Container life -->
+    <rect x="50" y="110" width="200" height="130" class="highlight" />
+    <path d="M50,110 L250,110" stroke="#C8A44D" stroke-width="4" />
+
+    <!-- Requests inside -->
+    <rect x="60" y="120" width="40" height="120" fill="#3B82F6" />
+    <rect x="120" y="140" width="60" height="100" fill="#3B82F6" />
+    <rect x="200" y="150" width="40" height="90" fill="#3B82F6" />
+
+    <text x="150" y="270" text-anchor="middle" class="text-body">Pagas TODO el tiempo amarillo</text>
+  </g>
+</svg>
