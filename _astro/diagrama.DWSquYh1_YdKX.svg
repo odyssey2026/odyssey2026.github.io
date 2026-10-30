@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" rx="8" />
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#202124">Cloud Run: Serverless VPC Access vs. Direct VPC Egress</text>
+
+  <!-- Left Side: Serverless VPC Access Connector -->
+  <g transform="translate(50, 80)">
+    <rect width="300" height="280" fill="#e8f0fe" rx="8" stroke="#4285f4" stroke-width="2" />
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1967d2">Serverless VPC Access</text>
+
+    <!-- Cloud Run -->
+    <rect x="20" y="60" width="100" height="60" fill="#ffffff" rx="4" stroke="#5f6368" stroke-width="1.5" />
+    <text x="70" y="95" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#202124">Cloud Run</text>
+
+    <!-- Connector -->
+    <rect x="160" y="60" width="120" height="60" fill="#ffffff" rx="4" stroke="#ea4335" stroke-width="1.5" stroke-dasharray="4,2" />
+    <text x="220" y="85" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#202124">Connector</text>
+    <text x="220" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">(Instancias VM)</text>
+
+    <!-- VPC Network -->
+    <rect x="20" y="180" width="260" height="80" fill="#ffffff" rx="4" stroke="#34a853" stroke-width="1.5" />
+    <text x="150" y="210" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#202124">VPC Network</text>
+    <text x="150" y="235" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">Base de datos / Recurso interno</text>
+
+    <!-- Arrows -->
+    <path d="M 120 90 L 160 90" stroke="#5f6368" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 220 120 L 220 180" stroke="#5f6368" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Note -->
+    <text x="150" y="150" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ea4335">Cuello de botella potencial</text>
+  </g>
+
+  <!-- Right Side: Direct VPC Egress -->
+  <g transform="translate(450, 80)">
+    <rect width="300" height="280" fill="#e5f4ea" rx="8" stroke="#34a853" stroke-width="2" />
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#137333">Direct VPC Egress</text>
+
+    <!-- Cloud Run -->
+    <rect x="100" y="60" width="100" height="60" fill="#ffffff" rx="4" stroke="#5f6368" stroke-width="1.5" />
+    <text x="150" y="95" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#202124">Cloud Run</text>
+
+    <!-- Subnet IP Allocation (Invisible conceptually, just showing direct access) -->
+
+    <!-- VPC Network -->
+    <rect x="20" y="180" width="260" height="80" fill="#ffffff" rx="4" stroke="#34a853" stroke-width="1.5" />
+    <text x="150" y="210" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#202124">VPC Network</text>
+    <text x="150" y="235" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#5f6368">Base de datos / Recurso interno</text>
+
+    <!-- Arrow -->
+    <path d="M 150 120 L 150 180" stroke="#34a853" stroke-width="3" marker-end="url(#arrow-green)" />
+
+    <!-- Note -->
+    <text x="210" y="150" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#137333">Tráfico directo, sin VMs intermedias</text>
+  </g>
+
+  <!-- Defs for arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5f6368" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34a853" />
+    </marker>
+  </defs>
+</svg>
