@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Estilos para modo claro y oscuro -->
+  <style>
+    .bg { fill: #f8f9fa; }
+    .text-main { fill: #202124; font-family: sans-serif; font-size: 16px; }
+    .text-title { fill: #202124; font-family: sans-serif; font-size: 20px; font-weight: bold; }
+    .box { fill: #ffffff; stroke: #dadce0; stroke-width: 2; rx: 8; }
+    .box-highlight { fill: #e8f0fe; stroke: #4285f4; stroke-width: 2; rx: 8; }
+    .arrow { stroke: #5f6368; stroke-width: 2; fill: none; }
+    .arrow-head { fill: #5f6368; }
+    .lock { fill: #ea4335; }
+
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #121212; }
+      .text-main { fill: #e8eaed; }
+      .text-title { fill: #e8eaed; }
+      .box { fill: #202124; stroke: #5f6368; }
+      .box-highlight { fill: #1e8e3e; stroke: #81c995; }
+      .arrow { stroke: #9aa0a6; }
+      .arrow-head { fill: #9aa0a6; }
+      .lock { fill: #f28b82; }
+    }
+  </style>
+
+  <!-- Fondo -->
+  <rect width="800" height="500" class="bg"/>
+
+  <!-- Título central -->
+  <text x="400" y="40" class="text-title" text-anchor="middle">Estado Remoto en Terraform con GCS</text>
+
+  <!-- Usuario 1 (Izquierda) -->
+  <rect x="50" y="150" width="150" height="80" class="box"/>
+  <text x="125" y="190" class="text-main" text-anchor="middle">Desarrollador A</text>
+  <text x="125" y="210" class="text-main" text-anchor="middle" font-size="12">terraform apply</text>
+
+  <!-- Usuario 2 (Derecha) -->
+  <rect x="600" y="150" width="150" height="80" class="box"/>
+  <text x="675" y="190" class="text-main" text-anchor="middle">Desarrollador B</text>
+  <text x="675" y="210" class="text-main" text-anchor="middle" font-size="12">terraform plan</text>
+
+  <!-- Cloud Storage (Centro) -->
+  <rect x="300" y="150" width="200" height="120" class="box-highlight"/>
+  <text x="400" y="180" class="text-title" text-anchor="middle">Cloud Storage (GCS)</text>
+  <text x="400" y="210" class="text-main" text-anchor="middle">Bucket Backend</text>
+
+  <rect x="320" y="225" width="160" height="30" class="box" fill-opacity="0.5"/>
+  <text x="400" y="245" class="text-main" text-anchor="middle" font-size="14">terraform.tfstate</text>
+
+  <!-- Flechas y Bloqueo -->
+  <!-- Flecha Dev A a GCS -->
+  <path d="M 200 190 L 285 190" class="arrow"/>
+  <polygon points="285,185 295,190 285,195" class="arrow-head"/>
+  <text x="245" y="180" class="text-main" text-anchor="middle" font-size="12">Adquiere Lock</text>
+
+  <!-- Candado -->
+  <circle cx="300" cy="190" r="15" class="lock"/>
+  <rect x="294" y="185" width="12" height="8" fill="#fff" rx="2"/>
+  <path d="M 297 185 V 180 A 3 3 0 0 1 303 180 V 185" fill="none" stroke="#fff" stroke-width="2"/>
+
+  <!-- Flecha Dev B a GCS (Bloqueado) -->
+  <path d="M 600 190 L 515 190" class="arrow" stroke-dasharray="5,5"/>
+  <polygon points="515,185 505,190 515,195" class="arrow-head"/>
+  <text x="555" y="180" class="text-main" text-anchor="middle" font-size="12">Espera (Locked)</text>
+  <line x1="505" y1="180" x2="515" y2="200" stroke="#ea4335" stroke-width="3"/>
+  <line x1="515" y1="180" x2="505" y2="200" stroke="#ea4335" stroke-width="3"/>
+
+  <!-- Infraestructura (Abajo) -->
+  <rect x="300" y="350" width="200" height="80" class="box"/>
+  <text x="400" y="380" class="text-title" text-anchor="middle">Google Cloud</text>
+  <text x="400" y="410" class="text-main" text-anchor="middle" font-size="14">Recursos Desplegados</text>
+
+  <!-- Flecha GCS a Infra -->
+  <path d="M 400 270 L 400 335" class="arrow"/>
+  <polygon points="395,335 400,345 405,335" class="arrow-head"/>
+  <text x="440" y="315" class="text-main" text-anchor="middle" font-size="12">Provisiona</text>
+
+</svg>
